@@ -1,0 +1,27 @@
+﻿@model List<LAB1.Models.Domain.ForumTopic>
+@{
+}
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<h1>Теми</h1>
+<table class="table"
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Назва</th>
+            <th>Опис</th>
+            <th>Дата написання</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var topic in Model)
+        {
+            <tr>
+                <td>@topic.Id</td>
+                <td>@topic.Title</td>
+                <td>@topic.Description</td>
+                <td>@topic.CreatedAt.ToString("dd-MM-yyyy")</td>
+                <td><a href="View/@topic.Id">Переглянути</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

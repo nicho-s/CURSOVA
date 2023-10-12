@@ -1,0 +1,16 @@
+﻿@model LAB1.Models.Domain.AddForumTopic
+@{
+}
+<link rel="stylesheet" href="~/css/create.css" asp-append-version="true" />
+
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Title" id="add-title-area">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Description</label>
+        <textarea class="form-control" asp-for="Description" rows="7" id="add-description-area"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" id="add-button">Розмістити</button>
+</form>

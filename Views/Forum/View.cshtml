@@ -1,0 +1,26 @@
+﻿@model LAB1.Models.Domain.UpdateTopicViewModel
+@{
+}
+
+<link rel="stylesheet" href="~/css/create.css" asp-append-version="true" />
+
+<h1>Редагування тем</h1>
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">ID</label>
+        <input type="text" class="form-control" asp-for="Id" id="change-id">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Title" id="change-title">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Description</label>
+        <textarea class="form-control" asp-for="Description" rows="7" id="change-description"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="add-button">Редагувати</button>
+    <button type="submit" class="btn btn-danger" id="delete-button"
+        asp-action="Delete"
+        asp-controller="Forum">Видалити</button>
+</form>

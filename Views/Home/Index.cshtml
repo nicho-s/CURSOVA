@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Форум</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LAB1.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>
+                    <!-- Заголовок сторінки -->
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="topics-panel">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="new-topics-tab" data-bs-toggle="tab" href="#new-topics" role="tab"
+                               aria-controls="new-topics" aria-selected="true">Нові теми</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="popular-topics-tab" data-bs-toggle="tab" href="#popular-topics" role="tab"
+                               aria-controls="popular-topics" aria-selected="false">Популярні теми</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active tab-pane-bg" id="new-topics" role="tabpanel" aria-labelledby="new-topics-tab">
+                            <!-- Вміст для "Нових тем" -->
+                            <p>Тут буде вміст для нових тем.</p>
+                        </div>
+
+                        <div class="tab-pane fade tab-pane-bg" id="popular-topics" role="tabpanel" aria-labelledby="popular-topics-tab">
+                            <!-- Вміст для "Популярних тем" -->
+                            <p>Тут буде вміст для популярних тем.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка "+" з фіксованим позиціонуванням -->
+        @* <button class="fixed-button" id="add-post-button" href="/Topic/AddTopic">
+            <a href="/Topic/AddTopic">
+            <p>Новий пост</p>
+            @* <img src="~/css/add.png" alt="Кнопка" /> *@
+        <form method="get" asp-controller="Forum" asp-action="Add">
+            <button class="fixed-button">
+                <p>Новий пост</p>
+            </button>
+        </form>
+
+    </main>
+    <script>
+        $(document).ready(function () {
+            $('#myTabs a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        });
+    </script>
+@*     <script src="~/js/hideform.js"></script> *@
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react-dnd@10.0.2/dist/ReactDnD.min.js"></script>
+    <script src="https://unpkg.com/react-dnd-html5-backend@10.0.2/dist/ReactDnDHTML5Backend.min.js"></script>
+</body>
+</html>
